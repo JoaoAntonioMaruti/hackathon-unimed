@@ -5,6 +5,7 @@
 angular.module('hackathon', [
   'ionic'
   , 'app.homeCtrl'
+  , 'app.admin'
   , 'app.loginCtrl'
   , 'app.settingsCtrl'
   , 'app.directives'
@@ -39,7 +40,7 @@ angular.module('hackathon', [
      * @Todo - Força passar pelo login
      */
     //$state.go('app.login');
-    $state.go('app.home');
+    $state.go('app.admin');
   });
   
 
@@ -73,6 +74,15 @@ angular.module('hackathon', [
         'appContent' :{
           templateUrl: 'views/home/home.html'
           , controller:'home.ctrl'
+        }
+      }
+    })
+    .state('app.admin', {
+      url: "/admin",
+      views: {
+        'appContent' :{
+          templateUrl: 'views/admin/admin.html'
+          , controller:'admin.ctrl'
         }
       }
     })
