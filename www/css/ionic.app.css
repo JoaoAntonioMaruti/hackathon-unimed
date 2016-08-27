@@ -9938,6 +9938,9 @@ input {
   .content h1, .content h2, .content h3 {
     color: #00a739; }
 
+.content-tab {
+  height: calc(100% - 95px); }
+
 .center {
   text-align: center; }
 
@@ -10096,3 +10099,26 @@ input {
 .chart img {
   width: 95%;
   margin: 2.5%; }
+
+.tabs-ui {
+  margin-top: 10px; }
+  .tabs-ui .item-tab {
+    margin: 5px 0;
+    padding: 3px 20px;
+    color: #43ef76; }
+  .tabs-ui .active {
+    box-shadow: 0 5px 20px rgba(67, 239, 118, 0.5);
+    background: #43ef76;
+    color: #fff !important; }
+
+.new-users {
+  margin: 20px; }
+  .new-users span {
+    font-size: 42px;
+    font-weight: bolder;
+    color: #43ef76; }
+
+.card-title {
+  text-align: center;
+  margin: 10px;
+  color: #00a739; }

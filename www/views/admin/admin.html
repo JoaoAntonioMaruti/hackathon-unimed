@@ -3,11 +3,35 @@
   <div class="bar bar-header bar-custon-1">
     <button class="button button-clear icon ion-ios-arrow-back" ng-click="back()"></button>
     <h1 class="title">Admin</h1>
+    <button class="button button-clear icon ion-ios-search" ng-click="filtrar()"></button>
   </div>
-  <ion-content class="has-header content">
-    <div class="chart">
-        <img src="http://i1.wp.com/guiadoexcel.com.br/wp-content/uploads/2011/07/GraficoFaturamento3.jpg">
+  <ion-content class="has-header content content-tab">
+    <h1 class="center">Gerencial</h1>
+    <div class="card">
+        <div class="card-title">Faturamento</div>
+        <div class="chart">
+            <img src="http://i1.wp.com/guiadoexcel.com.br/wp-content/uploads/2011/07/GraficoFaturamento3.jpg">
+        </div>    
     </div>
-      
+    <div class="card">
+        <div class="card-title">Novos usúarios</div>
+        <div class="new-users center">
+            <span>49494</span>
+        </div>
+    </div>
   </ion-content>
+      <div class="tabs tabs-icon-top">
+        <a class="tab-item">
+            <i class="icon ion-home"></i>
+            Home
+        </a>
+        <a class="tab-item">
+            <i class="icon ion-star"></i>
+            Favorites
+        </a>
+        <a class="tab-item">
+            <i class="icon ion-gear-a"></i>
+            Settings
+        </a>
+    </div>
 </ion-view>
