@@ -3,8 +3,12 @@
 
 angular.module('app.admin', [])
 
-.controller('admin.ctrl', function($scope, $ionicModal, $ionicScrollDelegate){
+.controller('admin.ctrl', function($scope, $ionicModal, $ionicScrollDelegate, $ionicPopup){
     $scope.filtrosAtivos = [];
+    var initNovaReuniao = () => {
+      $scope.novaReuniao = {};  
+    };
+    initNovaReuniao();
     
     /**
      * Inicializa as tabs
@@ -163,5 +167,18 @@ angular.module('app.admin', [])
                 }, 8000);
             return true;
         }
+        var confirmPopup = $ionicPopup.confirm({
+            title: 'Atenção !!',
+            template: 'Deseja confirmar os convocados para a reunião?'
+        });
+        confirmPopup.then(function(res) {
+            if(res) {
+                $scope.reunioes.push($scope.novaReuniao);
+                initNovaReuniao();
+                $scope.novaReuniaoModal.hide();
+            } else {
+                console.log('Não Confirma');
+            }
+        });
     }
 });
