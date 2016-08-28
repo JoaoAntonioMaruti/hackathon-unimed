@@ -119,15 +119,22 @@ angular.module('app.admin', [])
     }
     $scope.medicos = [{
         id:1
-        , nome:'Luke Skywalker'
+        , name:'Luke Skywalker'
     } , {
         id:2
-        , nome:'Luke Vader'
+        , name:'Luke Vader'
     }, {
         id:3
-        , nome:'C3PO'
+        , name:'C3PO'
     }, {
         id:4
-        , nome:'Chewbacca'
+        , name:'Chewbacca'
     }];
+    
+    $scope.convidados = [];
+    
+    $scope.addConvidados = (convidado) => {
+        $scope.convidados.push(convidado);
+    }
+    
 });

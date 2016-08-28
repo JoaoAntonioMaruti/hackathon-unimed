@@ -26,8 +26,7 @@
         <span>Presentes</span>
         <label class="item-input">
           <select name="" id="">
-            <option value="">Medico 1</option>
-            <option value="">Medico 1</option>
+            <option ng-repeat="medico in medicos" >{{medico.name}}</option>
           </select>
         </label>
       </div>
