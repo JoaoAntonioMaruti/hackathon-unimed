@@ -6,32 +6,70 @@
     <button class="button button-clear icon ion-ios-search" ng-click="filtrar()"></button>
   </div>
   <ion-content class="has-header content content-tab">
-    <h1 class="center">Gerencial</h1>
-    <div class="card">
-        <div class="card-title">Faturamento</div>
-        <div class="chart">
-            <img src="http://i1.wp.com/guiadoexcel.com.br/wp-content/uploads/2011/07/GraficoFaturamento3.jpg">
-        </div>    
-    </div>
-    <div class="card">
-        <div class="card-title">Novos usúarios</div>
-        <div class="new-users center">
-            <span>49494</span>
+    <div ng-if="tabAtiva.id == 1">
+        <h1 class="center">Gerencial</h1>
+        <div class="card">
+            <div class="card-title">Faturamento</div>
+            <div class="chart">
+                <img src="http://i1.wp.com/guiadoexcel.com.br/wp-content/uploads/2011/07/GraficoFaturamento3.jpg">
+            </div>    
+        </div>
+        <div class="card">
+            <div class="card-title">Novos usúarios</div>
+            <div class="new-users center">
+                <span>49494</span>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Valorização de mercado</div>
+            <div class="new-users center">
+                <i class="up ion-android-arrow-up"></i>
+                <span>4,2 %</span>
+            </div>
         </div>
     </div>
+    <div ng-if="tabAtiva.id == 2">
+        <div class="card reuniao-adiada" ng-repeat="reuniao in reunioes">
+            <div class="reuniao-title">
+                {{reuniao.name}}
+            </div>
+            <div class="reuniao-assunto" ng-class="{'reuniao-minimizada': reuniaoMax != $index}">
+                {{reuniao.desc}}
+                <br>
+                <br>
+                <i class="ion-ios-location"> Local: Teatro Candido Garcia</i>
+                <br>
+                <i class="ion-ios-clock"> 08:00</i>
+            </div>
+            <div class="btn-ver-mais">
+                <a ng-click="abrirInformacoesReuniao($index)">
+                    <div ng-if="reuniaoMax == $index">Esconder</div>
+                    <div ng-if="reuniaoMax != $index">Ver mais</div>
+                </a>
+            </div>
+        </div>    
+    </div>
+    <div ng-if="tabAtiva.id == 3">
+        Tab 3
+    </div>
   </ion-content>
-      <div class="tabs tabs-icon-top">
-        <a class="tab-item">
-            <i class="icon ion-home"></i>
-            Home
+  
+    <div class="round-button" ng-class="{'round-button-active': tabAtiva.id == 2}">
+        <button class="ion-android-add"></button>
+    </div>
+      <div class="tabs tabs-icon-top">         
+        <a class="tab-item" ng-click="setTab(1)" ng-class="{'tab-item-active': tabAtiva.id == 1}">
+            <i class="icon-verde icon ion-pie-graph"></i>
+            Dashboard
         </a>
-        <a class="tab-item">
-            <i class="icon ion-star"></i>
-            Favorites
+        <a class="icon-verde tab-item" ng-click="setTab(2)" ng-class="{'tab-item-active': tabAtiva.id == 2}">
+            <i class="icon ion-person-stalker"></i>
+            Reuniões
         </a>
-        <a class="tab-item">
-            <i class="icon ion-gear-a"></i>
-            Settings
+        <a class="icon-verde tab-item" ng-click="setTab(3)" ng-class="{'tab-item-active': tabAtiva.id == 3}">
+            <i class="icon ion-chatbubble-working"></i>
+            Comunidade
         </a>
     </div>
 </ion-view>

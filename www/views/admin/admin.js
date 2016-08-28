@@ -3,8 +3,23 @@
 
 angular.module('app.admin', [])
 
-.controller('admin.ctrl', function($scope, $ionicModal){
+.controller('admin.ctrl', function($scope, $ionicModal, $ionicScrollDelegate){
     $scope.filtrosAtivos = [];
+    
+    /**
+     * Inicializa as tabs
+     */
+    $scope.tabAtiva = {
+        id: 1
+    }
+
+    /**
+     * Inicializa as tabs
+     */
+    $scope.setTab = (tab) => {
+        $ionicScrollDelegate.scrollTop();
+        $scope.tabAtiva.id = tab;     
+    }
 
     /**
      * Inicializa o modal
@@ -12,11 +27,10 @@ angular.module('app.admin', [])
     $ionicModal.fromTemplateUrl('./views/admin/filtros-admin.html', {
         scope: $scope,
         animation: 'slide-in-up'
-    }).then(function(modal) {
+    }).then((modal) =>  {
         $scope.modal = modal;
     });
-    
-    
+
     $scope.filtrar = () => {
       $scope.modal.show();
     };
@@ -54,5 +68,32 @@ angular.module('app.admin', [])
     
     $scope.adicionarFiltros = () => {
        
+    }
+    
+    $scope.reunioes = [{
+        name: 'Scrum'
+        , desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore alias esse tempora, dolorum, ratione repellat rerum velit optio deserunt officiis quam. Aliquid optio neque iure sunt pariatur enim, aperiam quasi!'
+        , status: 'Adiada'
+        , id:1
+    }, {
+        name: 'Reunião de resultados'
+        , desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore alias esse tempora, dolorum, ratione repellat rerum velit optio deserunt officiis quam. Aliquid optio neque iure sunt pariatur enim, aperiam quasi!'
+        , status: 'Adiada'
+        , id:2
+    }, {
+        name: 'Name reunião'
+        , desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore alias esse tempora, dolorum, ratione repellat rerum velit optio deserunt officiis quam. Aliquid optio neque iure sunt pariatur enim, aperiam quasi!'
+        , status: 'Adiada'
+        , id:3
+    }];
+    /**
+     * ver informaçies da reunião
+     */
+    $scope.abrirInformacoesReuniao = (index) => {
+        if(index == $scope.reuniaoMax){
+            $scope.reuniaoMax = null;
+        }else{
+            $scope.reuniaoMax = index;
+        }
     }
 });

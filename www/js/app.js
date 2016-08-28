@@ -24,7 +24,6 @@ angular.module('hackathon', [
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-
     /**
      * @todo - Função para redirecionar a aplicação
      * @param {String} - estado no qual vai ser alterado
@@ -40,7 +39,7 @@ angular.module('hackathon', [
      * @Todo - Força passar pelo login
      */
     //$state.go('app.login');
-    $state.go('app.login');
+    $state.go('app.admin');
   });
   
 

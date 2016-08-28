@@ -10122,3 +10122,55 @@ input {
   text-align: center;
   margin: 10px;
   color: #00a739; }
+
+.new-users {
+  color: #43ef76;
+  font-size: 30px; }
+
+.round-button {
+  position: fixed;
+  bottom: -100px;
+  right: 20px;
+  transition: all .4s ease-in-out; }
+  .round-button button {
+    font-size: 32px;
+    background: #43ef76;
+    box-shadow: 0 5px 20px rgba(67, 239, 118, 0.5);
+    color: #fff;
+    border-radius: 50%;
+    border: 0;
+    padding: 0 13px; }
+
+.round-button-active {
+  bottom: 60px; }
+
+.icon-verde {
+  color: #43ef76; }
+
+.tab-item-active {
+  color: #00a739; }
+
+.reuniao-title {
+  margin: 10px;
+  color: #00a739;
+  font-size: 20px; }
+
+.reuniao-assunto {
+  margin: 0 10px 10px;
+  color: #616161;
+  overflow: visible;
+  height: auto;
+  line-height: 1; }
+
+.reuniao-minimizada {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-height: 1;
+  max-height: 3; }
+
+.btn-ver-mais {
+  text-align: center;
+  color: #00a739; }
