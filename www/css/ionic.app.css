@@ -9829,6 +9829,20 @@ a.button {
   .bar-custon-1 .title {
     color: #00a739; }
 
+select {
+  width: 100%;
+  background: #fff;
+  transition: .2s all ease-in-out; }
+  select:focus {
+    border: solid 1px #00a739 !important; }
+
+textarea {
+  background: #fff;
+  border: solid 1px #ccc !important;
+  transition: .2s all ease-in-out; }
+  textarea:focus {
+    border: solid 1px #00a739 !important; }
+
 input {
   border-bottom: solid 1px #ccc !important;
   transition: .2s all ease-in-out; }

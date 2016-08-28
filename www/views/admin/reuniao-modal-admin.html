@@ -1,0 +1,35 @@
+  <ion-modal-view hide-nav-bar="true">
+    <ion-header-bar>  
+      <div class="buttons">
+        <button class="button ion-android-close" ng-click="fecharReuniaoModal()"></button>
+      </div>
+      <h1 class="title">Filtros</h1>
+       <div class="buttons" ng-click="adicionarFiltros()">
+        <button class="button">OK</button>
+      </div>
+    </ion-header-bar>
+    <ion-content class="content">
+      <div class="col">
+        <label class="item-input item-floating-label">
+          <span class="input-label">Nome da reunião</span>
+          <input type="text" placeholder="Nome">
+        </label>
+      </div>
+      <div class="col">
+        <span>Sobre a reunião</span>
+        <label class="item-input">
+          <br>
+          <textarea name="" id="" cols="30" rows="10"></textarea>
+        </label>
+      </div>
+      <div class="col">
+        <span>Presentes</span>
+        <label class="item-input">
+          <select name="" id="">
+            <option value="">Medico 1</option>
+            <option value="">Medico 1</option>
+          </select>
+        </label>
+      </div>
+    </ion-content>
+  </ion-modal-view>

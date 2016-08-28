@@ -30,7 +30,17 @@ angular.module('app.admin', [])
     }).then((modal) =>  {
         $scope.modal = modal;
     });
-
+    
+    /**
+     * Inicializa o modal
+     */
+    $ionicModal.fromTemplateUrl('./views/admin/reuniao-modal-admin.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then((modal) =>  {
+        $scope.novaReuniaoModal = modal;
+    });
+    
     $scope.filtrar = () => {
       $scope.modal.show();
     };
@@ -75,16 +85,19 @@ angular.module('app.admin', [])
         , desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore alias esse tempora, dolorum, ratione repellat rerum velit optio deserunt officiis quam. Aliquid optio neque iure sunt pariatur enim, aperiam quasi!'
         , status: 'Adiada'
         , id:1
+        , importancia: 3
     }, {
         name: 'Reunião de resultados'
         , desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore alias esse tempora, dolorum, ratione repellat rerum velit optio deserunt officiis quam. Aliquid optio neque iure sunt pariatur enim, aperiam quasi!'
         , status: 'Adiada'
         , id:2
+        , importancia: 2
     }, {
         name: 'Name reunião'
         , desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore alias esse tempora, dolorum, ratione repellat rerum velit optio deserunt officiis quam. Aliquid optio neque iure sunt pariatur enim, aperiam quasi!'
         , status: 'Adiada'
         , id:3
+        , importancia: 1
     }];
     /**
      * ver informaçies da reunião
@@ -96,4 +109,25 @@ angular.module('app.admin', [])
             $scope.reuniaoMax = index;
         }
     }
+
+    $scope.novaReuniao = () => {
+        $scope.novaReuniaoModal.show();
+    }
+
+    $scope.fecharReuniaoModal = () => {
+        $scope.novaReuniaoModal.hide();
+    }
+    $scope.medicos = [{
+        id:1
+        , nome:'Luke Skywalker'
+    } , {
+        id:2
+        , nome:'Luke Vader'
+    }, {
+        id:3
+        , nome:'C3PO'
+    }, {
+        id:4
+        , nome:'Chewbacca'
+    }];
 });
