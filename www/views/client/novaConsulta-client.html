@@ -1,0 +1,74 @@
+  <ion-modal-view hide-nav-bar="true">
+    <ion-header-bar>  
+      <div class="buttons">
+        <button class="button ion-android-close" ng-click="fecharNovaConsulta()"></button>
+      </div>
+      <h1 class="title">Solicitar nova consulta</h1>
+       <div class="buttons" ng-click="enviarConsulta()">
+        <button class="button" ng-click="fecharNovaConsulta()">Enviar</button>
+      </div>
+    </ion-header-bar>
+    <ion-content>
+        <h3 class="center">Informações dos sintomas</h3>
+        <div class="col">
+          <label class="item-input item-floating-label" style="border-bottom: solid 1px #ccc;">
+            <span class="input-label">Sintomas</span>
+            <!--<input type="text" placeholder="Nome">-->
+            <textarea type="text" placeholder="Sintomas" rows="5" ng-model="dadosEnviar.sintomas"></textarea>
+          </label>
+        </div>
+        
+        <br>
+
+        <div class="list col">
+
+          <label class="item-input item-select">
+            <div class="input-label">
+              Especialidade
+            </div>
+            <select ng-model="dadosEnviar.especialidade">
+              <option ng-repeat="especialidade in especialidades">{{especialidade.nome}}</option>
+            </select>
+          </label>
+
+        </div>
+
+        <h4 class="center">Unidade Unimed</h4>
+
+        <div class="list col">
+          <label class="item-input item-select">
+            <div class="input-label">
+              Estado
+            </div>
+            <select ng-model="dadosEnviar.uf">
+              <option ng-repeat="estado in estados" >{{estado.uf}}</option>
+            </select>
+          </label>
+        </div>
+        
+        <div class="list col">
+          <label class="item-input item-select">
+            <div class="input-label">
+              Cidade
+            </div>
+            <select ng-model="dadosEnviar.cidade">
+              <option ng-repeat="cidade in cidades">{{cidade.nome}}</option>
+            </select>
+          </label>
+        </div>
+        
+        <div class="list col">
+          <label class="item-input item-select">
+            <div class="input-label">
+              Unidade
+            </div>
+            <select ng-model="dadosEnviar.endereco">
+              <option ng-repeat="unidade in unidades"">{{unidade.edereco}}</option>
+            </select>
+          </label>
+        </div>
+
+    </ion-content>
+  </ion-modal-view>
+
+  

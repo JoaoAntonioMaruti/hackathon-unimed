@@ -11,14 +11,18 @@
 
     <div ng-repeat="consulta in consultas">
         <div class="card margin-card">
-
             <div ng-if="consulta.status == 'pendente'" class="card-title-name card-title consulta-pendente">{{consulta.nome}}</div>
-            <div ng-if="consulta.status == 'enviada'" class="card-title-name card-title consulta-enviada">{{consulta.nome}}</div>
+            <div ng-if="consulta.status == 'enviada'" class="card-title-name card-title consulta-enviada">Solicitação enviada, aguarde o contato...</div>
             <div ng-if="consulta.status == 'confirmada'" class="card-title-name card-title consulta-confirmada">{{consulta.nome}}</div>
-            
-            <p class="ion-calendar"> 
+            <div ng-if="consulta.status == 'concluida'" class="card-title-name card-title consulta-concluida">{{consulta.nome}}</div>
+            <div ng-if="consulta.status == 'avaliado'" class="card-title-name card-title consulta-concluida">{{consulta.nome}}</div>
+            <p ng-if="consulta.status == 'pendente' || consulta.status == 'confirmada' || consulta.status == 'concluida' " >{{consulta.especialidade}}</p>
+            <p ng-if="consulta.status == 'enviada'  " >Especialidade soliciada: {{consulta.especialidade}}</p>
+            <p ng-if="consulta.status == 'pendente' || consulta.status == 'confirmada' || consulta.status == 'avaliado' || consulta.status == 'concluida' " class="ion-calendar"> 
                 {{consulta.data}} <i class="ion-clock"></i> {{consulta.hora}} 
                 <a ng-if="consulta.status == 'pendente'" ng-click="Confirmar(consulta)" class="ion-checkmark confirmar-consulta" href=""> Confirmar consulta</a> 
+                <a ng-if="consulta.status == 'avaliado'" class="" href=""> </a> 
+                <a ng-if="consulta.status == 'concluida'" ng-click="avaliarConsulta(consulta)" class="ion-checkmark confirmar-consulta"> Avaliar consulta</a> 
             </p>
 
         </div>
@@ -27,26 +31,15 @@
   </ion-content>
 
     <div class="round-button round-button-active">
-        <button class="ion-android-add"></button>
+        <button class="ion-android-add" ng-click="NovaConsulta()"></button>
     </div>
 
-    <div>
-        <i class="consulta-pendente">Pendente</i>
-        <i class="consulta-enviada"></i>
-        <i class="consulta-confirmada"></i>
+      <div style="display: inline-flex" class="tabs tabs-icon-top" >
+        <div>
+            <div class="legenda-enviada"></div> Enviada
+            <div class="legenda-pendente"></div> Pendente  
+            <div class="legenda-confirmada"></div> Confirmada  
+            <div class="legenda-concluida"></div> concluída  
+        </div>
     </div>
-      <!--<div class="tabs tabs-icon-top">
-        <a class="tab-item">
-            <i class="icon ion-home"></i>
-            Consultas
-        </a>
-        <a class="tab-item">
-            <i class="icon ion-star"></i>
-            Não
-        </a>
-        <a class="tab-item">
-            <i class="icon ion-gear-a"></i>
-            não tamém
-        </a>
-    </div>-->
 </ion-view>

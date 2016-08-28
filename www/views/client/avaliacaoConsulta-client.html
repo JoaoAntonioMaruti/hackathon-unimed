@@ -1,0 +1,31 @@
+  <ion-modal-view hide-nav-bar="true">
+    <ion-header-bar>  
+      <div class="buttons">
+        <button class="button ion-android-close" ng-click="fecharAvaliarConsulta()"></button>
+      </div>
+      <h1 class="title">Avaliar Consulta</h1>
+       <!--<div class="buttons" ng-click="enviarAvaliacao()">
+        <button class="button" ng-click="fecharAvaliarConsulta()">Enviar</button>
+      </div>-->
+    </ion-header-bar>
+    <ion-content>
+        <h3 class="center">Nota da consulta</h3>
+
+        <div class="center">
+            <div style="display: inline-flex" ng-repeat="n in [1,2,3,4,5]">
+                <i class="ion-star estrelona" ng-click="addNota($index)"></i>
+            </div>
+        </div>
+
+        <!--<div class="col">
+          <label class="item-input item-floating-label" style="border-bottom: solid 1px #ccc;">
+            <span class="input-label">Comentario</span>
+            <input type="text" placeholder="Nome">
+            <textarea type="text" placeholder="Comentrio" rows="5" ng-model="dadosEnviar.sintomas"></textarea>
+          </label>
+        </div>-->
+
+    </ion-content>
+  </ion-modal-view>
+
+  

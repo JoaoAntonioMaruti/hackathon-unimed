@@ -540,7 +540,35 @@ $verde-escuro:#00a739;
         border-radius: 50%; 
         background: #7CB342;
         border: 1px solid #33691E;
-        margin-right: 10px;
+        margin-right: 10px;      
+    }
+}
+
+.consulta-concluida{
+    &:before{
+        content:"";
+        position: relative;
+        width: 15px;
+        height: 15px;
+        float: left;
+        border-radius: 50%; 
+        background: #1E88E5;
+        border: 1px solid #0D47A1;
+        margin-right: 10px;      
+    }
+}
+
+.consulta-avaliado{
+    &:before{
+        content:"";
+        position: relative;
+        width: 15px;
+        height: 15px;
+        float: left;
+        border-radius: 50%; 
+        background: #1E88E5;
+        border: 1px solid #0D47A1;
+        margin-right: 10px;      
     }
 }
 
@@ -560,6 +588,54 @@ $verde-escuro:#00a739;
     color: black;
     float: right;
     margin-right: 15px;
+}
+
+.legenda-pendente{
+    content:"";
+    position: relative;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; 
+    background: #F57C00;
+    border: 1px solid #E65100;
+    display: inline-table
+}
+.legenda-concluida{
+    content:"";
+    position: relative;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; 
+    background: #1E88E5;
+    border: 1px solid #0D47A1;
+    display: inline-table
+}
+
+.legenda-enviada{
+    content:"";
+    position: relative;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; 
+    background: #7CB342;
+    border: 1px solid #33691E;
+    display: inline-table
+}
+
+.legenda-confirmada{
+    content:"";
+    position: relative;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; 
+    border: solid 1px #F57F17;
+    background: #FDD835;
+    display: inline-table
+}
+
+.estrelona{
+    font-size: 25px; 
+    padding: 3px;
 }
 
 

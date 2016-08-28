@@ -97,7 +97,7 @@ angular.module('hackathon', [
       }
     })
     .state('app.client', {
-      url: "/settings",
+      url: "/client",
       views: {
         'appContent' :{
           templateUrl: 'views/client/client.html'
