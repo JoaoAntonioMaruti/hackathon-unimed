@@ -10174,3 +10174,49 @@ input {
 .btn-ver-mais {
   text-align: center;
   color: #00a739; }
+
+.consulta-pendente:before {
+  content: "";
+  position: relative;
+  width: 15px;
+  height: 15px;
+  float: left;
+  border-radius: 50%;
+  background: #F57C00;
+  border: 1px solid #E65100;
+  margin-right: 10px; }
+
+.consulta-confirmada:before {
+  content: "";
+  position: relative;
+  width: 15px;
+  height: 15px;
+  float: left;
+  border-radius: 50%;
+  border: solid 1px #F57F17;
+  background: #FDD835;
+  margin-right: 10px; }
+
+.consulta-enviada:before {
+  content: "";
+  position: relative;
+  width: 15px;
+  height: 15px;
+  float: left;
+  border-radius: 50%;
+  background: #7CB342;
+  border: 1px solid #33691E;
+  margin-right: 10px; }
+
+.margin-card p, .margin-card div {
+  margin-left: 10px;
+  text-align: left; }
+
+.card-title-name {
+  font-size: large; }
+
+.confirmar-consulta {
+  text-decoration: none;
+  color: black;
+  float: right;
+  margin-right: 15px; }
