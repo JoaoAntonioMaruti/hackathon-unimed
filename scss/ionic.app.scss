@@ -602,3 +602,40 @@ $verde-escuro:#00a739;
 .convidados{
     margin:10px;
 }
+
+.topico{
+    margin:20px;
+    .user{
+        .title-topico{
+            i{
+                font-size: 30px;
+                color:#757575;
+            }
+            font-size: 30px;
+            color: $principal;
+        }
+        .controls-topico{
+            .like-icon{
+                color:#FF1744;
+                margin:4px 8px;
+                font-size:24px;
+            }
+            .chat-icon{
+                color:#1565C0;
+                margin:4px 8px;
+                font-size:24px;
+            }
+        }
+    }
+}
+
+.home-content{
+    margin:30px 10px;
+}
+
+.button-round-home{
+    border-radius:4px;
+    padding: 10px 0;
+    font-size:22px;
+    font-weight:bolder;
+}

@@ -10262,3 +10262,29 @@ h1, h2, h3, h4, h5, h6 {
 
 .convidados {
   margin: 10px; }
+
+.topico {
+  margin: 20px; }
+  .topico .user .title-topico {
+    font-size: 30px;
+    color: #00a739; }
+    .topico .user .title-topico i {
+      font-size: 30px;
+      color: #757575; }
+  .topico .user .controls-topico .like-icon {
+    color: #FF1744;
+    margin: 4px 8px;
+    font-size: 24px; }
+  .topico .user .controls-topico .chat-icon {
+    color: #1565C0;
+    margin: 4px 8px;
+    font-size: 24px; }
+
+.home-content {
+  margin: 30px 10px; }
+
+.button-round-home {
+  border-radius: 4px;
+  padding: 10px 0;
+  font-size: 22px;
+  font-weight: bolder; }
