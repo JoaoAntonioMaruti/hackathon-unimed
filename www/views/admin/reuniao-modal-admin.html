@@ -1,4 +1,5 @@
   <ion-modal-view hide-nav-bar="true">
+    <ion-error></ion-error>
     <ion-header-bar>  
       <div class="buttons">
         <button class="button ion-android-close" ng-click="fecharReuniaoModal()"></button>
@@ -25,10 +26,18 @@
       <div class="col">
         <span>Presentes</span>
         <label class="item-input">
-          <select name="" id="">
-            <option ng-repeat="medico in medicos" >{{medico.name}}</option>
+          <select ng-model="next">
+            <option ng-repeat="medico in medicos">{{medico.name}}</option>
           </select>
         </label>
+      </div>
+      <button class="button-round" ng-click="addConvidados(next)">
+        Convidar
+      </button>
+      <div class="convidados">
+        <div ng-repeat="convidado in convidados track by $index">
+          {{convidado}}
+        </div>
       </div>
     </ion-content>
   </ion-modal-view>

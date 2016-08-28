@@ -134,7 +134,20 @@ angular.module('app.admin', [])
     $scope.convidados = [];
     
     $scope.addConvidados = (convidado) => {
-        $scope.convidados.push(convidado);
+        
+        var index = $scope.convidados.indexOf(convidado);
+        if (index > -1) {
+            console.log('Já adicionado');
+            $scope.error = {
+                    status:true
+                    , message:'Esse cooperado já foi convidado'
+                };
+                setTimeout(function(){
+                    $scope.error.status = false;
+                    $scope.$apply();
+                }, 8000);
+        }else{
+            $scope.convidados.push(convidado);
+        }
     }
-    
 });
