@@ -1,0 +1,52 @@
+<ion-view title="Client" hide-nav-bar="true" can-swipe-back="true">
+  <ion-error></ion-error>
+  <div class="bar bar-header bar-custon-1">
+    <button class="button button-clear icon ion-ios-arrow-back" ng-click="back()"></button>
+    <h1 class="title">Área do cliente</h1>
+    <button class="button button-clear icon ion-ios-search" ng-click="filtrar()"></button>
+  </div>
+  <ion-content class="has-header content content-tab">
+    <h2 class="center">Consultas agendadas</h2>
+
+
+    <div ng-repeat="consulta in consultas">
+        <div class="card margin-card">
+
+            <div ng-if="consulta.status == 'pendente'" class="card-title-name card-title consulta-pendente">{{consulta.nome}}</div>
+            <div ng-if="consulta.status == 'enviada'" class="card-title-name card-title consulta-enviada">{{consulta.nome}}</div>
+            <div ng-if="consulta.status == 'confirmada'" class="card-title-name card-title consulta-confirmada">{{consulta.nome}}</div>
+            
+            <p class="ion-calendar"> 
+                {{consulta.data}} <i class="ion-clock"></i> {{consulta.hora}} 
+                <a ng-if="consulta.status == 'pendente'" ng-click="Confirmar(consulta)" class="ion-checkmark confirmar-consulta" href=""> Confirmar consulta</a> 
+            </p>
+
+        </div>
+    </div>
+    
+  </ion-content>
+
+    <div class="round-button round-button-active">
+        <button class="ion-android-add"></button>
+    </div>
+
+    <div>
+        <i class="consulta-pendente">Pendente</i>
+        <i class="consulta-enviada"></i>
+        <i class="consulta-confirmada"></i>
+    </div>
+      <!--<div class="tabs tabs-icon-top">
+        <a class="tab-item">
+            <i class="icon ion-home"></i>
+            Consultas
+        </a>
+        <a class="tab-item">
+            <i class="icon ion-star"></i>
+            Não
+        </a>
+        <a class="tab-item">
+            <i class="icon ion-gear-a"></i>
+            não tamém
+        </a>
+    </div>-->
+</ion-view>

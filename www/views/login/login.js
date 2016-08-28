@@ -4,12 +4,8 @@
 angular.module('app.loginCtrl', [])
 
 .controller('login.ctrl', function($scope, $rootScope, $state, $ionicLoading, LoadingTemplate){
-    $scope.goHome = function(){
-        $ionicLoading.show(LoadingTemplate);
-        setTimeout(function(){
-            $ionicLoading.hide();
-            $state.go('app.home');
-        },1000);
+    $scope.goHome = function(){        
+        $state.go('app.home');
     };
 
     $scope.closeMenu = function(){

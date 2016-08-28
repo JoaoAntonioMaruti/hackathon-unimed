@@ -1,0 +1,16 @@
+  <ion-modal-view hide-nav-bar="true">
+    <ion-header-bar>  
+      <div class="buttons">
+        <button class="button ion-android-close" ng-click="fecharFiltros()"></button>
+      </div>
+      <h1 class="title">Filtros</h1>
+       <div class="buttons" ng-click="adicionarFiltros()">
+        <button class="button">OK</button>
+      </div>
+    </ion-header-bar>
+    <ion-content class="content">
+        <div ng-repeat="filtro in filtros">
+            <ion-checkbox ng-checked="filtros.check" ng-click="selecionaFiltro(filtro)">{{filtro.name}}</ion-checkbox>        
+        </div>
+    </ion-content>
+  </ion-modal-view>
