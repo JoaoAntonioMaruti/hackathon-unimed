@@ -14,6 +14,7 @@ angular.module('hackathon', [
   , 'app.filters'
   , 'app.validators'
   , 'app.client'
+  , 'app.medico'
 ])
 
 .run(function($ionicPlatform, $rootScope, $ionicHistory, $state, $ionicSideMenuDelegate) {
@@ -104,5 +105,14 @@ angular.module('hackathon', [
         }
       }
     })
+    .state('app.medico', {
+        url: "/medico",
+        views: {
+          'appContent': {
+            templateUrl: 'views/medico/medico.html'
+            , controller: 'medico.ctrl'
+          }
+        }
+      })
   $urlRouterProvider.otherwise('/app/login');
 })

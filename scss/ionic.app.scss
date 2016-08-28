@@ -352,9 +352,9 @@ input{
   }
 }
 
-.backdrop{
-    background:rgba(255,255,255,.6);
-}
+//.backdrop{
+//    background:rgba(255,255,255,.6);
+//}
 
 .loading-container{
     //background:rgba(255,255,255,.3);
@@ -541,4 +541,42 @@ $verde-escuro:#00a739;
     color: black;
     float: right;
     margin-right: 15px;
+}
+
+
+.commentLimit{
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 3; /* number of lines to show */
+   line-height: 1;        /* fallback */
+   max-height: 3*1;  
+}
+
+.div-vermais{
+    margin-top: 10px;
+}
+
+.btn-ver-mais{
+    text-align: center;
+    text-decoration: none;
+}
+ h1, h2, h3, h4, h5, h6{
+        color:$principal;
+ }
+
+
+ .comment-minimizado{
+      
+ }
+
+ 
+.menu-comentario{
+    position: absolute;
+    right: 17px;
+    top: 17px;
+    font-size: 25px;
+    padding: 3px;
+
 }
