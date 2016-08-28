@@ -39,7 +39,7 @@ angular.module('hackathon', [
      * @Todo - Força passar pelo login
      */
     //$state.go('app.login');
-    $state.go('app.admin');
+    $state.go('app.login');
   });
   
 
