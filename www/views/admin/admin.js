@@ -134,7 +134,6 @@ angular.module('app.admin', [])
     $scope.convidados = [];
     
     $scope.addConvidados = (convidado) => {
-        
         var index = $scope.convidados.indexOf(convidado);
         if (index > -1) {
             console.log('Já adicionado');
@@ -147,7 +146,22 @@ angular.module('app.admin', [])
                     $scope.$apply();
                 }, 8000);
         }else{
-            $scope.convidados.push(convidado);
+            if(convidado) $scope.convidados.push(convidado);
+        }
+    }
+
+    $scope.confirmaReuniao = () => {
+        console.log($scope.convidados.length);
+        if($scope.convidados.length == 0) {
+            $scope.error = {
+                status:true
+                    , message:'Selecione ao menos 1 convidado'
+                };
+                setTimeout(function(){
+                    $scope.error.status = false;
+                    $scope.$apply();
+                }, 8000);
+            return true;
         }
     }
 });
