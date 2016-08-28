@@ -1,0 +1,97 @@
+<ion-view title="Home" hide-nav-bar="true" can-swipe-back="true">
+    <ion-error></ion-error>
+    <div class="bar bar-header bar-custon-1">
+        <button class="button button-clear icon ion-ios-arrow-back" ng-click="back()"></button>
+        <h1 class="title">Médico</h1>
+        <button class="button button-clear icon ion-ios-search" ng-click="filtrar()"></button>
+    </div>
+    <ion-content class="has-header content content-tab">
+        <h1 class="center">Avaliações</h1>
+        <div class="card">
+            <div class="card-title">Gráfico</div>
+            <div class="chart">
+                <img src="http://quebrandoparadigmas.files.wordpress.com/2010/05/chart.png">
+            </div>
+        </div>
+
+        <br>
+        <h4 class="center">Comentários</h4>
+        <div class="list card">
+
+            <div class="item item-avatar">
+                <img src="./img/person.png">
+                <h2>Anonimo</h2>
+                <p>Médico muito bom</p>
+                <!--<span class="menu-comentario ion-android-more-vertical"></span>-->
+            </div>
+
+            <div class="item item-body" ng-repeat="i in [1,2,3,4,5]">
+                <img class="full-image">
+
+                <div class="strelas">
+                    <img src="./img/estrela-ativa.png" alt="">
+                    <img src="./img/estrela-ativa.png" alt="">
+                    <img src="./img/estrela-ativa.png" alt="">
+                    <img src="./img/estrela-ativa.png" alt="">
+                    <img src="./img/estrela-inativa.png" alt="">
+                </div>
+                <div class="commentLimit" ng-class="{'comment-minimizado' : 'commentMax != $index'}">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio sit necessitatibus omnis harum unde et obcaecati eius magnam
+                    dolores ipsum, placeat culpa ullam commodi, eligendi id ad, velit quasi, deserunt?
+                </div>
+
+                <div class="text-center div-vermais">
+                    <a class="btn-ver-mais" ng-click="abrirComment($index)">
+                        <div ng-if="commentMax == $index">Esconder</div>
+                        <div ng-if="commentMax != $index">Ver mais</div>
+                    </a>
+
+                    
+                </div>
+
+            </div>
+            <!--<span class="ver-mais">Ver mais</span>-->
+        </div>
+
+        <div class="list card">
+
+            <div class="item item-avatar">
+                <img src="./img/person.png">
+                <h2>Anonimo</h2>
+                <p>Secretária muito chata</p>
+                <!--<span class="menu-comentario ion-android-more-vertical"></span>-->
+            </div>
+
+            <div class="item item-body">
+                <img class="full-image">
+
+                <div class="strelas">
+                    <img src="./img/estrela-ativa.png" alt="">
+                    <img src="./img/estrela-ativa.png" alt="">
+                    <img src="./img/estrela-inativa.png" alt="">
+                    <img src="./img/estrela-inativa.png" alt="">
+                    <img src="./img/estrela-inativa.png" alt="">
+                </div>
+                <div class="comment-limit">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio sit necessitatibus omnis harum unde et obcaecati eius magnam
+                    dolores ipsum, placeat culpa ullam commodi, eligendi id ad, velit quasi, deserunt?
+                </div>
+                <div class="text-center div-vermais">
+                    <a href="" class="btn-ver-mais">Ver mais</a>
+                </div>
+            </div>
+
+            <!--<span class="ver-mais">Ver mais</span>-->
+        </div>
+        <!--<button class="button button-light text-center btn-vermais">Ver mais</button> -->
+
+    </ion-content>
+    <div class="tabs tabs-icon-top">
+        <a class="tab-item">
+            <i class="icon ion-chatbox-working"></i> Avaliações
+        </a>
+        <a class="tab-item">
+            <i class="icon ion-ios-medkit"></i> Consultas
+        </a>
+    </div>
+</ion-view>
