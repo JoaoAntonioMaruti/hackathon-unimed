@@ -13,6 +13,7 @@ angular.module('hackathon', [
   , 'app.services'
   , 'app.filters'
   , 'app.validators'
+  , 'app.client'
 ])
 
 .run(function($ionicPlatform, $rootScope, $ionicHistory, $state, $ionicSideMenuDelegate) {
@@ -40,7 +41,7 @@ angular.module('hackathon', [
      * @Todo - Força passar pelo login
      */
     //$state.go('app.login');
-    $state.go('app.login');
+    $state.go('app.client');
   });
   
 
@@ -92,6 +93,15 @@ angular.module('hackathon', [
         'appContent' :{
           templateUrl: 'views/settings/settings.html'
           , controller:'settings.ctrl'
+        }
+      }
+    })
+    .state('app.client', {
+      url: "/settings",
+      views: {
+        'appContent' :{
+          templateUrl: 'views/client/client.html'
+          , controller:'client.ctrl'
         }
       }
     })
